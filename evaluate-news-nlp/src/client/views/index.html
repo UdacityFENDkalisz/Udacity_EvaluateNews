@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Evaluate News App</title>
+</head>
+
+<body>
+    <div id="page-container">
+        <div id="sub-container">
+            <header>
+                <h1>Evaluate News</h1>
+            </header>
+            <main>
+                <section>
+                    <form class="" onsubmit="return Client.handleSubmit(event)">
+                        <input class="user-input" id="inputURL" type="text" name="input" value=""
+                            placeholder="Enter URL">
+                        <input class="button" type="submit" name="" value="Analyze"
+                            onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    </form>
+                    <div class="message" id="errorMessage"></div>
+                </section>
+                <div class="midsection">
+                    <section class="output">
+                        <strong>Form Results:</strong>
+                        <div class="message" id="results"></div>
+                        <div class="message" id="subjectivity"></div>
+                        <div class="message" id="score"></div>
+                    </section>
+                </div>
+            </main>
+        </div>
+
+        <footer>
+            <div class="footer">
+                2021. Created for Udacity's FrontEnd Nanodegree
+            </div>
+            <div class="attribution">
+                <img src="../images/meaningCloud-logo.png" alt="Meaning Cloud logo">
+                <a href="https://www.meaningcloud.com/" target="blank">Powered by MeaningCloud API</a>
+            </div>
+        </footer>
+    </div>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+</body>
+
+</html>
