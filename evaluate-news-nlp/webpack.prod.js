@@ -53,10 +53,7 @@ module.exports = {
         }),
         //new MiniCssExtractPlugin({ filename: "[name].css" }),
         //new WorkboxPlugin.GenerateSW(),
-        new dotenv({
-            path: './.env',
-            //safe: true
-        })
+        new webpack.EnvironmentPlugin(['API_KEY'])
     ],
     optimization: {
        // minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
