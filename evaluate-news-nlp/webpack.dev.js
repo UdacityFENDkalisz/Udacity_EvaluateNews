@@ -49,6 +49,6 @@ module.exports = {
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
         }),
-        
+        new webpack.EnvironmentPlugin(['API_KEY'])
     ]
 }
