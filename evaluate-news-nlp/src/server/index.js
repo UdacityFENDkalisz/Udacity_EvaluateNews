@@ -50,7 +50,7 @@ async function callAPI(req, res) {
     try {
         const nlpData = await response.json()
         if (nlpData.status.code == 0) {
-            nlpData.message = "Your article reads as"
+            nlpData.message = "Your article reads as:"
             res.send(nlpData)
         } else {
             res.send({ message: "API call didn't work" })
